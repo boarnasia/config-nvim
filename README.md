@@ -2,6 +2,10 @@
 
 ## PLUGINS
 
+### copilot.vim - Github Copilot
+
+
+
 ### neo-tree.vim - エクスプローラビュー
 
 Ctrl-b で toggle もしくは :Neotree
