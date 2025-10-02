@@ -1,15 +1,22 @@
 local opts = { noremap = true, silent = true }
 local term_opts = { silent = true }
 
+-- leader を space に
+vim.g.mapleader = " "        -- <Leader> を Space に
+vim.g.maplocalleader = " "   -- <LocalLeader> も Space に
+
 -- local keymap = vim.keymap
 local keymap = vim.api.nvim_set_keymap
 
-keymap("n", "<C-t>", ":NERDTreeToggle<CR>", opts)
 
--- telescope
-require('telescope').setup{}
+-- Neotree
+keymap("n", "<C-b>", ":Neotree<CR>", opts)
 
-vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<cr>', { desc = 'Find files' })
-vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', { desc = 'Live grep' })
-vim.keymap.set('n', '<leader>fb', '<cmd>Telescope buffers<cr>', { desc = 'Find buffers' })
-vim.keymap.set('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', { desc = 'Find help' })
+
+-- Telescope
+---- Find files using Telescope command-line sugar.
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
+vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
