@@ -2,14 +2,40 @@
 
 ## PLUGINS
 
-### nvim-lspconfig - langage server configurations for Neovim
+Plugin Manager: [lazy](https://lazy.folke.io/)
+
+### nvim-lspconfig, mason - lsp, linter とか
 
 基本操作
 
-- `<C-o><C-x>`: 補完
-- `<C-p> | <C-n>`: 補完候補の移動
-- `<C-[>`: タグジャンプ
+```
+map("n", "gd", vim.lsp.buf.definition)
+map("n", "gr", vim.lsp.buf.references)
+map("n", "K",  vim.lsp.buf.hover)
+map("n", "<leader>rn", vim.lsp.buf.rename)
+map("n", "<leader>ca", vim.lsp.buf.code_action)
+map("n", "[d", vim.diagnostic.goto_prev)
+map("n", "]d", vim.diagnostic.goto_next)
+["<C-Space>"] = cmp.mapping.complete(),
+["<CR>"] = cmp.mapping.confirm({ select = true }),
+["<Tab>"] = cmp.mapping.select_next_item(),
+["<S-Tab>"] = cmp.mapping.select_prev_item(),
+```
 
+DAP
+
+```
+vim.keymap.set("n", "<F5>", dap.continue)
+vim.keymap.set("n", "<F10>", dap.step_over)
+vim.keymap.set("n", "<F11>", dap.step_into)
+vim.keymap.set("n", "<F12>", dap.step_out)
+vim.keymap.set("n", "<leader>db", dap.toggle_breakpoint)
+vim.keymap.set("n", "<leader>dB", function()
+  dap.set_breakpoint(vim.fn.input("Breakpoint condition: "))
+end)
+vim.keymap.set("n", "<leader>dr", dap.repl.open)
+vim.keymap.set("n", "<leader>du", dapui.toggle)
+```
 
 ### Telescope
 
@@ -69,9 +95,14 @@ git ui
 :CopilotChat
 ```
 
-提案を受け入れる： <Tab> または <C-j>
+コーディング時のキーマップ
+提案を受け入れる： <C-j>
 次の候補に移動： <M-]>
 前の候補に戻る： <M-[>
+
+チャット時のキーマップ
+提案を受け入れる： <C-j>
+送信: Insert モードで <C-s>
 
 
 ### neo-tree.vim - エクスプローラビュー

@@ -4,10 +4,8 @@ local term_opts = { silent = true }
 -- local keymap = vim.keymap
 local keymap = vim.api.nvim_set_keymap
 
-
 -- Neotree
 keymap("n", "<C-b>", ":Neotree<CR>", opts)
-
 
 -- Telescope
 ---- Find files using Telescope command-line sugar.
@@ -18,16 +16,19 @@ vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' 
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 
 -- CopilotChat
-vim.keymap.set("n", "<leader>cc", ":CopilotChat<CR>", { desc = "Open Copilot Chat" })
-vim.keymap.set("v", "<leader>ce", ":CopilotChatExplain<CR>", { desc = "Explain code" })
-vim.keymap.set("v", "<leader>cr", ":CopilotChatRefactor<CR>", { desc = "Refactor code" })
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "copilot-chat",
-  callback = function()
-    vim.keymap.set("i", "<C-j>", 'copilot#Accept("<CR>")',
-      { buffer = true, expr = true, silent = true, noremap = true })
-    vim.keymap.set("i", "<Tab>", 'copilot#Accept("<CR>")',
-      { buffer = true, expr = true, silent = true, noremap = true })
-  end,
-})
+-- vim.keymap.set("n", "<leader>cc", ":CopilotChat<CR>", { desc = "Open Copilot Chat" })
+-- vim.keymap.set("v", "<leader>ce", ":CopilotChatExplain<CR>", { desc = "Explain code" })
+-- vim.keymap.set("v", "<leader>cr", ":CopilotChatRefactor<CR>", { desc = "Refactor code" })
+-- vim.keymap.set("i", "<C-j>", 'copilot#Accept("\\<CR>")',
+--                { expr = true, silent = true, replace_keycodes = false })
+-- vim.api.nvim_create_autocmd("FileType", {
+--   pattern = "copilot-chat",
+--   callback = function()
+--     vim.keymap.set("i", "<C-j>", 'copilot#Accept("<CR>")',
+--       { buffer = true, expr = true, silent = true, replace_keycodes = false })
+--     vim.keymap.set("n", "<C-s>", function()
+--       vim.cmd("CopilotChatSend")
+--     end, { noremap = true, silent = true })
+--   end,
+-- })
 

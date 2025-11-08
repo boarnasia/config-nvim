@@ -2,7 +2,8 @@ return {
   -- Git integration for Vim
   {
     "tpope/vim-fugitive",
-    cmd = { "Git", "G" },
+    lazy = false,
+    cmd = { "Git" },
   },
 
   -- 差分サイン + ハンク操作
@@ -22,24 +23,6 @@ return {
     dependencies = "nvim-lua/plenary.nvim",
     opts = {
       -- diffview のオプション
-    },
-  },
-
-  -- Magit 風 UI
-  {
-    "NeogitOrg/neogit",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "sindrets/diffview.nvim",
-    },
-    lazy = false,
-    opts = {
-      disable_hint = false,
-      prompt_force_push = true,
-      -- 他オプションを必要に応じて設定
-    },
-    keys = {
-      { "<leader>gg", ":Neogit<CR>", desc = "Open Neogit" },
     },
   },
 }
