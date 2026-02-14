@@ -39,5 +39,5 @@
   "ts-comments.nvim": { "branch": "main", "commit": "123a9fb12e7229342f807ec9e6de478b1102b041" },
   "which-key.nvim": { "branch": "main", "commit": "3aab2147e74890957785941f0c1ad87d0a44c15a" },
   "yanky.nvim": { "branch": "main", "commit": "9d3caea67cf183639d4e510d34f2d58b6109abdd" },
-  "zenhan.vim": { "branch": "main", "commit": "23c4d055d34ce702ad411923ccef1b35e3be6646" }
+  "zenhan.vim": { "branch": "main", "commit": "3fa602fc19fe0fcaf98e75970b648ac6595c5588" }
 }
