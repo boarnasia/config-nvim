@@ -18,3 +18,6 @@ end, { desc = "Find Files in Home" })
 
 -- Normalモードで F2 を押した時にリネームを実行
 vim.keymap.set("n", "<F2>", vim.lsp.buf.rename, { desc = "LSP Rename" })
+
+-- Markdown preview のトグル
+vim.keymap.set("n", "<leader>mt", "<cmd>MarkdownPreviewToggle<cr>", { desc = "Markdown Preview" })
