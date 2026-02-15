@@ -11,3 +11,5 @@ vim.opt.foldtext = "" -- 折りたたみ時の表示をシンプルにする
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.expandtab = true
+
+vim.opt.clipboard = "unnamedplus" -- クリップボードをシステムと共有
