@@ -13,3 +13,5 @@ vim.opt.tabstop = 4
 vim.opt.expandtab = true
 
 vim.opt.clipboard = "unnamedplus" -- クリップボードをシステムと共有
+
+vim.g.snacks_animate = false
