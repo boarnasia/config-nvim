@@ -11,3 +11,7 @@ vim.opt.foldtext = "" -- 折りたたみ時の表示をシンプルにする
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.expandtab = true
+
+if vim.g.vscode then
+    vim.opt.spell = false
+end
