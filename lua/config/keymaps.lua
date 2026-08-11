@@ -21,3 +21,15 @@ vim.keymap.set("n", "<F2>", vim.lsp.buf.rename, { desc = "LSP Rename" })
 
 -- Markdown preview のトグル
 vim.keymap.set("n", "<leader>mt", "<cmd>MarkdownPreviewToggle<cr>", { desc = "Markdown Preview" })
+
+-- 日付
+vim.keymap.set("n", "<C-b>d", function()
+    local date = tostring(os.date("%Y-%m-%d"))
+    vim.api.nvim_put({ date }, "c", true, true)
+end, { noremap = true })
+
+-- 時刻
+vim.keymap.set("n", "<C-b>t", function()
+    local time = tostring(os.date("%H:%M"))
+    vim.api.nvim_put({ time }, "", true, true)
+end, { noremap = true })
